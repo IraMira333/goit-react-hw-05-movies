@@ -7,6 +7,17 @@ import MoviesList from 'components/MoviesList/MoviesList';
 const MoviePage = () => {
   const [movies, setMovies] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
+  const query = 'cat';
+
+  const searchMovieInput = queryInput => {
+    if (query === queryInput) {
+      return;
+    }
+    console.log(queryInput);
+
+    setMovies([]);
+  };
+
   return (
     <main>
       <MovieSearch searchMovieInput={searchMovieInput} />
