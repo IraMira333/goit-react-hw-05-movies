@@ -1,12 +1,11 @@
-import MovieSearch from 'components/MovieSearch/MovieSearch';
-
 import { useState, useEffect } from 'react';
-import Spiner from 'components/Spiner/Spiner';
-import MoviesList from 'components/MoviesList/MoviesList';
 import getApi from 'API/Api';
 import toastConfig from 'components/toastConfig';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import Spiner from 'components/Spiner/Spiner';
+import MoviesList from 'components/MoviesList/MoviesList';
+import MovieSearch from 'components/MovieSearch/MovieSearch';
 
 const MoviePage = () => {
   const [movies, setMovies] = useState([]);
