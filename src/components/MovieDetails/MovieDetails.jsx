@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 import images from '../images/film-popkorn-700x466-1-min.jpg';
 import css from './MovieDetails.module.css';
 
@@ -31,12 +32,16 @@ const MovieDetails = ({ movieDetails }) => {
         <p>{overview}</p>
         <h3>Genres</h3>
         <div className={css.genres}>
-          {genres?.map(genr => {
-            return <p key={genr.id}>{genr.name}</p>;
+          {genres?.map(({ id, name }) => {
+            return <p key={id}>{name}</p>;
           })}
         </div>
       </div>
     </div>
   );
+};
+
+MovieDetails.propTypes = {
+  movieDetails: PropTypes.array.isRequired,
 };
 export default MovieDetails;
