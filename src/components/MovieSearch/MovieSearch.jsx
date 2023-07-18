@@ -2,22 +2,14 @@ import PropTypes from 'prop-types';
 import css from './MovieSearch.module.css';
 import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import toastConfig from 'components/toastConfig';
 
 const MovieSearch = ({ searchMovieInput }) => {
   const onSubmit = e => {
     e.preventDefault();
     const searching = e.target.searching.value.trim().toLowerCase();
     if (searching === '') {
-      toast.warn('Please enter a request!', {
-        position: 'top-center',
-        autoClose: 5000,
-        hideProgressBar: false,
-        closeOnClick: true,
-        pauseOnHover: true,
-        draggable: true,
-        progress: undefined,
-        theme: 'colored',
-      });
+      toast.warn('Please enter a request!', toastConfig);
       return;
     }
     searchMovieInput(searching);
