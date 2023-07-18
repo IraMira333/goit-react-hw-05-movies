@@ -20,7 +20,7 @@ const MoviePage = () => {
         setIsLoading(true);
 
         const moviesSearch = await getApi('/search/movie', query);
-        console.log(moviesSearch.results.length);
+
         if (moviesSearch.results.length === 0) {
           toast.warning(`No movies found`, toastConfig);
           return;
@@ -45,7 +45,7 @@ const MoviePage = () => {
     if (query === queryInput) {
       return;
     }
-    console.log(queryInput);
+
     setQuery(queryInput);
     setMovies([]);
   };
