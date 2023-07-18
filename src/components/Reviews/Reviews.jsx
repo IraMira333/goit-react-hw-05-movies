@@ -21,8 +21,6 @@ const Reviews = () => {
           return;
         }
         setReviews(movieReviews.results);
-
-        console.log(movieReviews.results);
       } catch (error) {
         console.log(err);
         setErr(error.message);
