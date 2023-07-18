@@ -1,0 +1,22 @@
+.header {
+  background-color: aquamarine;
+  height: 50px;
+  box-shadow: 0 0 3px 3px rgba(32, 33, 23, 0.5);
+  border: 1px solid #a4a1a1;
+}
+
+.navbox {
+  display: flex;
+  gap: 30px;
+
+  margin-left: 30px;
+  margin-top: 15px;
+}
+.link {
+  text-decoration: none;
+}
+.link:hover,
+.link:active {
+  color: red;
+  font-weight: 600;
+}
