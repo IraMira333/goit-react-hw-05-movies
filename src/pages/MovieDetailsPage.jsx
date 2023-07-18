@@ -10,6 +10,7 @@ const MovieDetails = () => {
   const [err, setErr] = useState(null);
   const [isLoading, setIsLoading] = useState(false);
   const [movieDetails, setMovieDetails] = useState({});
+
   const { movieId } = useParams();
 
   useEffect(() => {
@@ -19,11 +20,7 @@ const MovieDetails = () => {
 
         const movieCard = await getApi(`/movie/${movieId}`);
         setMovieDetails(movieCard);
-        // const moviesTitleList = movie.results.map(({ title, id }) => {
-        //   return { title, id };
-        // });
 
-        // setTrendingMovies([...moviesTitleList]);
         console.log(movieCard);
       } catch (error) {
         console.log(err);
@@ -38,7 +35,8 @@ const MovieDetails = () => {
   }, [err]);
   const data = new Date(movieDetails.release_date);
   const release = data.getFullYear();
-  const userScore = Math.ceil(movieDetails.popularity);
+  const userScore = Math.ceil(movieDetails.vote_count);
+  const poster = movieDetails.poster_path;
 
   return (
     <main>
@@ -46,7 +44,7 @@ const MovieDetails = () => {
         {movieDetails.title} ({release}){' '}
       </h2>
       <p>User Score: {userScore}%</p>
-      <img src="" alt="" />
+      <img src={`https://image.tmdb.org/t/p/w400${poster}`} alt="" />
       <h3>Overview</h3>
       <p>{movieDetails.overview}</p>
       {/* <h3>Genres</h3>
