@@ -1,13 +1,15 @@
 {
   "files": {
-    "main.css": "/goit-react-hw-05-movies/static/css/main.7acaea2f.css",
-    "main.js": "/goit-react-hw-05-movies/static/js/main.c995ed48.js",
+    "main.css": "/goit-react-hw-05-movies/static/css/main.38899378.css",
+    "main.js": "/goit-react-hw-05-movies/static/js/main.fdb26c9f.js",
+    "static/media/film-popkorn-700x466-1-min.jpg": "/goit-react-hw-05-movies/static/media/film-popkorn-700x466-1-min.16a7b53794262b049ad0.jpg",
+    "static/media/icon-user-640x640-min.png": "/goit-react-hw-05-movies/static/media/icon-user-640x640-min.68eeee129e921acdec6b.png",
     "index.html": "/goit-react-hw-05-movies/index.html",
-    "main.7acaea2f.css.map": "/goit-react-hw-05-movies/static/css/main.7acaea2f.css.map",
-    "main.c995ed48.js.map": "/goit-react-hw-05-movies/static/js/main.c995ed48.js.map"
+    "main.38899378.css.map": "/goit-react-hw-05-movies/static/css/main.38899378.css.map",
+    "main.fdb26c9f.js.map": "/goit-react-hw-05-movies/static/js/main.fdb26c9f.js.map"
   },
   "entrypoints": [
-    "static/css/main.7acaea2f.css",
-    "static/js/main.c995ed48.js"
+    "static/css/main.38899378.css",
+    "static/js/main.fdb26c9f.js"
   ]
 }
