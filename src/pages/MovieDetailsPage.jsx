@@ -1,11 +1,12 @@
 import getApi from 'API/Api';
 import toastConfig from 'components/toastConfig';
-import { toast } from 'react-toastify';
+import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
 import { useEffect, useState } from 'react';
 import { Link, Outlet, useParams } from 'react-router-dom';
 import MovieDetails from 'components/MovieDetails/MovieDetails';
+import Spiner from 'components/Spiner/Spiner';
 
 const MovieDetailsPage = () => {
   const [err, setErr] = useState(null);
@@ -35,6 +36,7 @@ const MovieDetailsPage = () => {
 
   return (
     <main>
+      {isLoading && <Spiner />}
       {!isLoading && <MovieDetails movieDetails={movieDetails} />}
       <h4>Additional information</h4>
       <ul>
@@ -46,6 +48,18 @@ const MovieDetailsPage = () => {
         </li>
       </ul>
       <Outlet />
+      <ToastContainer
+        position="top-center"
+        autoClose={5000}
+        hideProgressBar={false}
+        newestOnTop={false}
+        closeOnClick
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover
+        theme="colored"
+      />
     </main>
   );
 };
