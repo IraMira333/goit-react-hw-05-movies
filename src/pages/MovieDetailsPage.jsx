@@ -5,8 +5,9 @@ import 'react-toastify/dist/ReactToastify.css';
 
 import { useEffect, useState } from 'react';
 import { Link, Outlet, useParams } from 'react-router-dom';
+import MovieDetails from 'components/MovieDetails/MovieDetails';
 
-const MovieDetails = () => {
+const MovieDetailsPage = () => {
   const [err, setErr] = useState(null);
   const [isLoading, setIsLoading] = useState(false);
   const [movieDetails, setMovieDetails] = useState({});
@@ -20,8 +21,6 @@ const MovieDetails = () => {
 
         const movieCard = await getApi(`/movie/${movieId}`);
         setMovieDetails(movieCard);
-
-        console.log(movieCard);
       } catch (error) {
         console.log(err);
         setErr(error.message);
@@ -32,27 +31,12 @@ const MovieDetails = () => {
       }
     }
     getMovieDetails();
-  }, [err]);
-  const data = new Date(movieDetails.release_date);
-  const release = data.getFullYear();
-  const userScore = Math.ceil(movieDetails.vote_count);
-  const poster = movieDetails.poster_path;
+  }, [err, movieId]);
 
   return (
     <main>
-      <h2>
-        {movieDetails.title} ({release}){' '}
-      </h2>
-      <p>User Score: {userScore}%</p>
-      <img src={`https://image.tmdb.org/t/p/w400${poster}`} alt="" />
-      <h3>Overview</h3>
-      <p>{movieDetails.overview}</p>
-      {/* <h3>Genres</h3>
-      <div>
-        {movieDetails.genres.map(genr => {
-          return <p>{genr.name}</p>;
-        })}
-      </div> */}
+      {!isLoading && <MovieDetails movieDetails={movieDetails} />}
+      <h4>Additional information</h4>
       <ul>
         <li>
           <Link to="cast">Cast</Link>
@@ -66,4 +50,4 @@ const MovieDetails = () => {
   );
 };
 
-export default MovieDetails;
+export default MovieDetailsPage;
