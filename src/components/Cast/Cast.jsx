@@ -23,8 +23,6 @@ const Cast = () => {
           return;
         }
         setCast(movieCast.cast);
-
-        console.log(movieCast.cast);
       } catch (error) {
         console.log(err);
         setErr(error.message);
@@ -42,15 +40,15 @@ const Cast = () => {
       {isLoading && <Spiner />}
       {!cast && <p>We haven't found any cast information</p>}
       <ul>
-        {cast?.map(actor => {
-          const foto = actor.profile_path
-            ? `https://image.tmdb.org/t/p/w400${actor.profile_path}`
+        {cast?.map(({ profile_path, id, name, character }) => {
+          const foto = profile_path
+            ? `https://image.tmdb.org/t/p/w400${profile_path}`
             : avatar;
           return (
-            <li key={actor.id}>
-              <img src={foto} alt={actor.name} width={120} />
-              <p>{actor.name}</p>
-              <p>Character: {actor.character}</p>
+            <li key={id}>
+              <img src={foto} alt={name} width={120} />
+              <p>{name}</p>
+              <p>Character: {character}</p>
             </li>
           );
         })}
