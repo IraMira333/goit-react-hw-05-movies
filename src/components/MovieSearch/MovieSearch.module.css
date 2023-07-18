@@ -5,6 +5,7 @@
   width: 500px;
   border-radius: 2px;
   overflow: hidden;
+  margin-top: 20px;
 }
 .searchFormBtn {
   display: block;
