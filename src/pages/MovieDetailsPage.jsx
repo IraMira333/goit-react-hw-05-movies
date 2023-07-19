@@ -3,7 +3,7 @@ import toastConfig from 'components/toastConfig';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
-import { useEffect, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { Link, Outlet, useLocation, useParams } from 'react-router-dom';
 import MovieDetails from 'components/MovieDetails/MovieDetails';
 import Spiner from 'components/Spiner/Spiner';
@@ -17,7 +17,8 @@ const MovieDetailsPage = () => {
   const { movieId } = useParams();
 
   const location = useLocation();
-  console.log(location);
+  const backLink = useRef(location.state?.from ?? '/');
+  const backLinkLocationRef = backLink.current;
 
   useEffect(() => {
     async function getMovieDetails() {
@@ -41,7 +42,7 @@ const MovieDetailsPage = () => {
   return (
     <main>
       {isLoading && <Spiner />}
-      <Goback location={location} />
+      <Goback location={backLinkLocationRef} />
       {!isLoading && <MovieDetails movieDetails={movieDetails} />}
       <h4>Additional information</h4>
       <ul>
