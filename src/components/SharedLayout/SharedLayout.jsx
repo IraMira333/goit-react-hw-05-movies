@@ -6,10 +6,10 @@ const SharedLayout = () => {
     <>
       <header className={css.header}>
         <nav className={css.navbox}>
-          <NavLink className={css.link} to="/">
+          <NavLink className={css.navLink} to="/">
             Home
           </NavLink>
-          <NavLink className={css.link} to="/movies">
+          <NavLink className={css.navLink} to="/movies">
             Movies
           </NavLink>
         </nav>
