@@ -35,6 +35,7 @@ const HomePage = () => {
 
   return (
     <main>
+      <h1>Trending Today</h1>
       {isLoading && <Spiner />}
       <MoviesList movies={trendingMovies} />
     </main>
