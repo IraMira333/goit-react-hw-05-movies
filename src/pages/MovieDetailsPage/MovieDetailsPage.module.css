@@ -1,0 +1,9 @@
+.additionalBox {
+  outline: 2px solid rgb(205, 193, 193);
+  margin-top: 20px;
+  padding: 10px 0;
+  background-color: rgb(249, 249, 243);
+}
+.title {
+  margin: 0;
+}
