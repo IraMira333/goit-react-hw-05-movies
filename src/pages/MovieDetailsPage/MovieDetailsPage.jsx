@@ -2,12 +2,12 @@ import getApi from 'API/Api';
 import toastConfig from 'components/toastConfig';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-
 import { useEffect, useRef, useState } from 'react';
 import { Link, Outlet, useLocation, useParams } from 'react-router-dom';
 import MovieDetails from 'components/MovieDetails/MovieDetails';
 import Spiner from 'components/Spiner/Spiner';
 import Goback from 'components/GoBack/GoBack';
+import css from './MovieDetailsPage.module.css';
 
 const MovieDetailsPage = () => {
   const [err, setErr] = useState(null);
@@ -44,15 +44,17 @@ const MovieDetailsPage = () => {
       {isLoading && <Spiner />}
       <Goback location={backLinkLocationRef} />
       {!isLoading && <MovieDetails movieDetails={movieDetails} />}
-      <h4>Additional information</h4>
-      <ul>
-        <li>
-          <Link to="cast">Cast</Link>
-        </li>
-        <li>
-          <Link to="reviews">Reviews</Link>
-        </li>
-      </ul>
+      <div className={css.additionalBox}>
+        <h4 className={css.title}>Additional information</h4>
+        <ul>
+          <li>
+            <Link to="cast">Cast</Link>
+          </li>
+          <li>
+            <Link to="reviews">Reviews</Link>
+          </li>
+        </ul>
+      </div>
       <Outlet />
       <ToastContainer
         position="top-center"
