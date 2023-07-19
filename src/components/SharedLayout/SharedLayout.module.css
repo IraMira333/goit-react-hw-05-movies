@@ -12,11 +12,12 @@
   margin-left: 30px;
   margin-top: 15px;
 }
-.link {
+.navLink {
   text-decoration: none;
 }
-.link:hover,
-.link:active {
+.navLink:hover,
+.navLink:focus,
+.navLink .active {
   color: red;
   font-weight: 600;
 }
