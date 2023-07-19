@@ -6,7 +6,7 @@ import 'react-toastify/dist/ReactToastify.css';
 import Spiner from 'components/Spiner/Spiner';
 import MoviesList from 'components/MoviesList/MoviesList';
 import MovieSearch from 'components/MovieSearch/MovieSearch';
-import { useLocation, useSearchParams } from 'react-router-dom';
+import { useSearchParams } from 'react-router-dom';
 
 const MoviePage = () => {
   const [movies, setMovies] = useState([]);
@@ -14,9 +14,6 @@ const MoviePage = () => {
 
   const [searchParams, setSearchParams] = useSearchParams();
   const query = searchParams.get('query') ?? '';
-
-  const location = useLocation();
-  console.log(location);
 
   useEffect(() => {
     if (!searchParams.size) return;
