@@ -13,7 +13,7 @@ const MoviePage = () => {
   const [isLoading, setIsLoading] = useState(false);
 
   const [searchParams, setSearchParams] = useSearchParams();
-  const query = searchParams.get('query') ?? '';
+  const querySearch = searchParams.get('query') ?? '';
 
   useEffect(() => {
     if (!searchParams.size) return;
@@ -22,7 +22,7 @@ const MoviePage = () => {
       try {
         setIsLoading(true);
 
-        const moviesSearch = await getApi('/search/movie', query);
+        const moviesSearch = await getApi('/search/movie', querySearch);
 
         if (moviesSearch.results.length === 0) {
           toast.warning(`No movies found`, toastConfig);
@@ -40,7 +40,7 @@ const MoviePage = () => {
       }
     }
     getMovie();
-  }, [query, searchParams.size]);
+  }, [querySearch, searchParams.size]);
 
   const handleSubmit = e => {
     e.preventDefault();
