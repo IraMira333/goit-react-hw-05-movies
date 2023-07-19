@@ -1,6 +1,6 @@
 import getApi from 'API/Api';
+import MoviesList from 'components/MoviesList/MoviesList';
 import Spiner from 'components/Spiner/Spiner';
-import TrendingMovies from 'components/TrendingMovies/TrendingMovies';
 import toastConfig from 'components/toastConfig';
 import { useEffect, useState } from 'react';
 import { toast } from 'react-toastify';
@@ -36,7 +36,7 @@ const HomePage = () => {
   return (
     <main>
       {isLoading && <Spiner />}
-      <TrendingMovies trendingMovies={trendingMovies} />
+      <MoviesList movies={trendingMovies} />
     </main>
   );
 };
