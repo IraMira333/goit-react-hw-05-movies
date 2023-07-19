@@ -1,0 +1,14 @@
+.goback {
+  display: flex;
+  margin-top: 10px;
+  color: black;
+  width: 90px;
+  height: 40px;
+  border: 1px solid rgb(229, 171, 171);
+  border-radius: 4px;
+  justify-content: center;
+  align-items: center;
+  background-color: rgb(212, 239, 204);
+  cursor: pointer;
+  text-decoration: none;
+}
