@@ -1,5 +1,4 @@
 import getApi from 'API/Api';
-import Spiner from 'components/Spiner/Spiner';
 import toastConfig from 'components/toastConfig';
 import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
@@ -7,7 +6,6 @@ import { toast } from 'react-toastify';
 import avatar from '../images/icon-user-640x640-min.png';
 
 const Cast = () => {
-  const [isLoading, setIsLoading] = useState(false);
   const [cast, setCast] = useState([]);
   const [err, setErr] = useState(null);
   const { movieId } = useParams();
@@ -15,8 +13,6 @@ const Cast = () => {
   useEffect(() => {
     async function getMovieCast() {
       try {
-        setIsLoading(true);
-
         const movieCast = await getApi(`/movie/${movieId}/credits`);
         if (!movieCast) {
           toast.warning(`We haven't found any cast information`, toastConfig);
@@ -28,8 +24,6 @@ const Cast = () => {
         setErr(error.message);
 
         toast.error(error.message, toastConfig);
-      } finally {
-        setIsLoading(false);
       }
     }
     getMovieCast();
@@ -37,7 +31,6 @@ const Cast = () => {
 
   return (
     <>
-      {isLoading && <Spiner />}
       {!cast && <p>We haven't found any cast information</p>}
       <ul>
         {cast?.map(({ profile_path, id, name, character }) => {
