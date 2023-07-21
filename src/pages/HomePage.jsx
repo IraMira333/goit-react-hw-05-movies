@@ -1,4 +1,4 @@
-import getApi from 'API/Api';
+import { getTrending } from 'API/Api';
 import MoviesList from 'components/MoviesList/MoviesList';
 import toastConfig from 'components/toastConfig';
 import { useEffect, useState } from 'react';
@@ -12,7 +12,7 @@ const HomePage = () => {
   useEffect(() => {
     async function getTrendingMovie() {
       try {
-        const movie = await getApi('/trending/movie/day');
+        const movie = await getTrending();
         const moviesTitleList = movie.results.map(({ title, id }) => {
           return { title, id };
         });
