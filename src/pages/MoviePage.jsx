@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import getApi from 'API/Api';
+import { getMoviesByName } from 'API/Api';
 import toastConfig from 'components/toastConfig';
 import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
@@ -18,7 +18,7 @@ const MoviePage = () => {
 
     async function getMovie() {
       try {
-        const moviesSearch = await getApi('/search/movie', querySearch);
+        const moviesSearch = await getMoviesByName(querySearch);
 
         if (moviesSearch.results.length === 0) {
           toast.warning(`No movies found`, toastConfig);
