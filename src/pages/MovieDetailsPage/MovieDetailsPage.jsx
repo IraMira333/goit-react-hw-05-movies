@@ -1,6 +1,6 @@
 import getApi from 'API/Api';
 import toastConfig from 'components/toastConfig';
-import { ToastContainer, toast } from 'react-toastify';
+import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { Suspense, useEffect, useRef, useState } from 'react';
 import { Link, Outlet, useLocation, useParams } from 'react-router-dom';
@@ -51,18 +51,6 @@ const MovieDetailsPage = () => {
       <Suspense fallback={<Spiner />}>
         <Outlet />
       </Suspense>
-      <ToastContainer
-        position="top-center"
-        autoClose={5000}
-        hideProgressBar={false}
-        newestOnTop={false}
-        closeOnClick
-        rtl={false}
-        pauseOnFocusLoss
-        draggable
-        pauseOnHover
-        theme="colored"
-      />
     </>
   );
 };
