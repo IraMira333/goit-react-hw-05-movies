@@ -2,6 +2,7 @@ import { NavLink, Outlet } from 'react-router-dom';
 import css from './SharedLayout.module.css';
 import { Suspense } from 'react';
 import Spiner from 'components/Spiner/Spiner';
+import { ToastContainer } from 'react-toastify';
 
 const SharedLayout = () => {
   return (
@@ -21,6 +22,18 @@ const SharedLayout = () => {
           <Outlet />
         </Suspense>
       </main>
+      <ToastContainer
+        position="top-center"
+        autoClose={5000}
+        hideProgressBar={false}
+        newestOnTop={false}
+        closeOnClick
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover
+        theme="colored"
+      />
     </>
   );
 };
