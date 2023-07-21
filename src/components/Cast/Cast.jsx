@@ -1,4 +1,4 @@
-import getApi from 'API/Api';
+import { getApi } from 'API/Api';
 import toastConfig from 'components/toastConfig';
 import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
