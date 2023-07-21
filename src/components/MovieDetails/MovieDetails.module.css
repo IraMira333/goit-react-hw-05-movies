@@ -2,9 +2,12 @@
   display: flex;
   gap: 20px;
   margin-top: 20px;
+
+  width: 100%;
 }
 
 .genres {
   display: flex;
   gap: 10px;
+  justify-content: flex-start;
 }
