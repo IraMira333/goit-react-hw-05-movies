@@ -11,7 +11,7 @@ import css from './MovieDetailsPage.module.css';
 
 const MovieDetailsPage = () => {
   const [err, setErr] = useState(null);
-  const [movieDetails, setMovieDetails] = useState({});
+  const [movieDetails, setMovieDetails] = useState(null);
 
   const { movieId } = useParams();
   const location = useLocation();
