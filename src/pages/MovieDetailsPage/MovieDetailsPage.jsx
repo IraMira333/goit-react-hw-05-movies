@@ -37,7 +37,7 @@ const MovieDetailsPage = () => {
     <>
       <Goback location={backLinkLocationRef} />
       {movieDetails && <MovieDetails movieDetails={movieDetails} />}
-      <div className={css.additionalBox}>
+      <div className={`${css.additionalBox} ${css.noMargin}`}>
         <h4 className={css.title}>Additional information</h4>
         <ul>
           <li>
