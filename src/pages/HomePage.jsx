@@ -13,9 +13,11 @@ const HomePage = () => {
     async function getTrendingMovie() {
       try {
         const movie = await getTrending();
-        const moviesTitleList = movie.results.map(({ title, id }) => {
-          return { title, id };
-        });
+        const moviesTitleList = movie.results.map(
+          ({ tagline, poster_path, title, id }) => {
+            return { title, id, poster_path, tagline };
+          }
+        );
 
         setTrendingMovies([...moviesTitleList]);
       } catch (error) {
