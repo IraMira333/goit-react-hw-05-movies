@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import getApi from 'API/Api';
 import toastConfig from 'components/toastConfig';
-import { ToastContainer, toast } from 'react-toastify';
+import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import MoviesList from 'components/MoviesList/MoviesList';
 import MovieSearch from 'components/MovieSearch/MovieSearch';
@@ -14,7 +14,7 @@ const MoviePage = () => {
   const querySearch = searchParams.get('query') ?? '';
 
   useEffect(() => {
-    if (!searchParams.size) return;
+    if (!querySearch) return;
 
     async function getMovie() {
       try {
@@ -38,7 +38,7 @@ const MoviePage = () => {
 
   const handleSubmit = e => {
     e.preventDefault();
-    const searching = e.target.children.searching.value.trim().toLowerCase();
+    const searching = e.target.searching.value.trim().toLowerCase();
     if (searching) {
       setSearchParams({ query: searching });
     } else {
@@ -57,18 +57,6 @@ const MoviePage = () => {
       <MovieSearch handleSubmit={handleSubmit} changeInput={changeInput} />
 
       {movies.length > 0 && <MoviesList movies={movies} />}
-      <ToastContainer
-        position="top-center"
-        autoClose={5000}
-        hideProgressBar={false}
-        newestOnTop={false}
-        closeOnClick
-        rtl={false}
-        pauseOnFocusLoss
-        draggable
-        pauseOnHover
-        theme="colored"
-      />
     </>
   );
 };
