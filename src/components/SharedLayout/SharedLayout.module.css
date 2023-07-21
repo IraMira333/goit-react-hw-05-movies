@@ -1,23 +1,37 @@
 .header {
-  background-color: aquamarine;
+  background-color: rgb(141, 185, 171);
   height: 50px;
   box-shadow: 0 0 3px 3px rgba(32, 33, 23, 0.5);
   border: 1px solid #a4a1a1;
 }
-
+.container {
+  background-color: rgb(226, 231, 229);
+  padding-top: 20px;
+  padding-left: 20px;
+  padding-right: 20px;
+}
 .navbox {
   display: flex;
   gap: 30px;
 
-  margin-left: 30px;
+  justify-content: center;
   margin-top: 15px;
 }
 .navLink {
   text-decoration: none;
+  font-size: 24px;
+  font-weight: 600;
+  color: rgb(222, 246, 10);
 }
 .navLink:hover,
 .navLink:focus,
 .navLink .active {
   color: red;
   font-weight: 600;
+}
+
+h1 {
+  display: flex;
+  justify-content: center;
+  margin-top: 0;
 }
