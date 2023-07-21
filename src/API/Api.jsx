@@ -12,5 +12,8 @@ export const getApi = async (endPoint, dataQuery) => {
   // console.log(data);
   return data;
 };
+export const getTrending = async () => await getApi('/trending/movie/day');
 
-export default getApi;
+export const getMoviesByName = async name =>
+  await getApi('/search/movie', name);
+// export default getApi;
