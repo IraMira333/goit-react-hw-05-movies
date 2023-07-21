@@ -1,4 +1,4 @@
-import getApi from 'API/Api';
+import { getApi } from 'API/Api';
 import toastConfig from 'components/toastConfig';
 import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
