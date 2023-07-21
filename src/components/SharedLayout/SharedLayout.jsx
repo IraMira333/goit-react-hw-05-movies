@@ -17,7 +17,7 @@ const SharedLayout = () => {
           </NavLink>
         </nav>
       </header>
-      <main>
+      <main className={css.container}>
         <Suspense fallback={<Spiner />}>
           <Outlet />
         </Suspense>
