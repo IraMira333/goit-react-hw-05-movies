@@ -24,9 +24,11 @@ const MoviePage = () => {
           toast.warning(`No movies found`, toastConfig);
           return;
         }
-        const moviesTitleList = moviesSearch.results.map(({ title, id }) => {
-          return { title, id };
-        });
+        const moviesTitleList = moviesSearch.results.map(
+          ({ tagline, poster_path, title, id }) => {
+            return { title, id, poster_path, tagline };
+          }
+        );
 
         setMovies(moviesTitleList);
       } catch (error) {
