@@ -9,11 +9,10 @@ export const getApi = async (endPoint, dataQuery) => {
       dataQuery ? `&query=${dataQuery}` : ''
     }&language=en-US`
   );
-  // console.log(data);
+
   return data;
 };
 export const getTrending = async () => await getApi('/trending/movie/day');
 
 export const getMoviesByName = async name =>
   await getApi('/search/movie', name);
-// export default getApi;
