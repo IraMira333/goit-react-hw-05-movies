@@ -1,0 +1,31 @@
+.trendingBox {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 25px;
+  list-style: none;
+  justify-content: center;
+}
+
+.trendingItem {
+  display: block;
+  box-shadow: 3px 3px 3px rgba(32, 33, 23, 0.5);
+  border: 1px solid #36253c;
+  background-color: aliceblue;
+  border-radius: 5px;
+  transition: scale 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+.trendingItem:hover,
+.trendingItemx:focus {
+  scale: 1.1;
+  box-shadow: 4px 4px 4px rgba(46, 74, 231, 0.5);
+}
+.title {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  width: 250px;
+}
+.link {
+  text-decoration: none;
+}
