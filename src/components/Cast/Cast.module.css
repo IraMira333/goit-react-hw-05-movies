@@ -7,6 +7,7 @@
 }
 .castItem {
   display: block;
+  width: 200px;
   box-shadow: 3px 3px 3px rgba(32, 33, 23, 0.5);
   border: 1px solid #36253c;
   background-color: aliceblue;
@@ -17,4 +18,7 @@
   margin-left: auto;
   margin-right: auto;
   margin-top: 5px;
+}
+.castItem > p {
+  text-align: center;
 }
